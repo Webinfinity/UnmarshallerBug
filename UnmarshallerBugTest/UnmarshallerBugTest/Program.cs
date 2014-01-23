@@ -35,6 +35,7 @@ namespace UnmarshallerBugTest
 			// withSupport is the unmarshalled object for the returned JSON object if the SDK does support the new property
 			var withSupport = new SimpleUnmarshallerWithSupportForNewSubObjectsProperty().Unmarshall(new Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext(json, null)) as SimpleObjectInSDKWithSupportForNewSubObjectsProperty;
 
+			// Regardless of support for the new SubObjects1 property Proeprty2 should still work, but it doesn't
 			if (withoutSupport.Property2 != withSupport.Property2)
 				Console.WriteLine("Property2 does not match!");
 			else
